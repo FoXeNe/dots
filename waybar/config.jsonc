@@ -2,6 +2,7 @@
     "position": "top",
     "layer": "top",
     "output": ["DP-2", "HDMI-A-1"],
+    "output": "eDP-1",
     "height": 16,
     "margin-top": 0,
     "margin-bottom": 0,
