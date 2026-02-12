@@ -40,7 +40,7 @@ sudo pacman -S --needed --noconfirm \
   hyprpaper \
   waybar \
   kitty \
-  rofi \
+  fuzzel \
   fish \
   nvim \
   swaync \
@@ -51,7 +51,10 @@ sudo pacman -S --needed --noconfirm \
   noto-fonts \
   noto-fonts-cjk \
   noto-fonts-emoji \
-  7zip
+  7zip \
+  neovim \
+  dolphin \
+  mpv
 
 # pipewire installation and start
 sudo pacman -Syu pipewire pipewire-pulse wireplumber pipewire-alsa pipewire-audio pavucontrol
