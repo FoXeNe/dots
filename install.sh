@@ -1,32 +1,60 @@
 #!/bin/bash
 set -e # exit on any error
 
-echo "🛠️ starting installation..."
+echo "🛠️ starting installation"
 
-# Update system first
-echo "📦 updating system..."
-#sudo pacman -Syu --noconfirm
+# update system
+echo "📦 updating system"
+sudo pacman -Syu --noconfirm
 
-# TODO: install paru
+# install paru
+read -p "Установить paru? (y/N): " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  sudo pacman -S --needed base-devel
+  git clone https://aur.archlinux.org/paru.git
+  cd paru
+  makepkg -si
+  cd ../
+  rm -rf paru
+else
+  echo "пропускаю"
+fi
 
-# core hyprland packages
-echo "📦 Installing core packages..."
-sudo pacman -S --needed \
+#install paru packages
+echo "installing paru packages"
+paru -S --needed --noconfirm \
+  wlogout \
+  zen-browser-bin \
+  amneziavpn-bin
+
+# core packages
+echo "📦 installing core packages"
+sudo pacman -S --needed --noconfirm \
   hyprland \
   waybar \
   kitty \
   rofi \
-  wlogout \
   fish \
   nvim \
   swaync \
   matugen \
-  --noconfirm
+  wl-clipboard \
+  ttf-jetbrains-mono-nerd \
+  btop \
+  noto-fonts \
+  noto-fonts-cjk \
+  noto-fonts-emoji
+
+# pipewire installation
+sudo pacman -S --needed --noconfirm pipewire wireplumber pipewire-alsa pipewire-pulse pipewire-jack pipewire-v4l2 lib32-pipewire lib32-pipewire-jack libpipewire
+
+# nvidia drivers
+sudo pacman -S nvidia-open-dkms nvidia-utils lib32-nvidia-utils nvidia-settings xorg-xwayland linux-headers clang
 
 # set fish as default shell
-echo "🐟 setting up fish shell..."
+echo "🐟 setting up fish shell"
 chsh -s "$(which fish)" "$USER"
 
 # complete
-echo "✅ Installation complete!"
-echo "🔄 Please log out and log back in to Fish shell"
+echo "installation complete"
