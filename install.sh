@@ -3,6 +3,9 @@ set -e # exit on any error
 
 echo "🛠️ starting installation"
 
+# copy config
+cp -rup config/* ~/.config/
+
 # update system
 echo "📦 updating system"
 sudo pacman -Syu --noconfirm
@@ -65,3 +68,4 @@ chsh -s "$(which fish)" "$USER"
 
 # complete
 echo "installation complete"
+echo "restart your session"
