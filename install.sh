@@ -34,6 +34,7 @@ sudo pacman -S --needed --noconfirm \
   hyprland \
   hyprlock \
   hypridle \
+  hyprpaper \
   waybar \
   kitty \
   rofi \
@@ -46,7 +47,8 @@ sudo pacman -S --needed --noconfirm \
   btop \
   noto-fonts \
   noto-fonts-cjk \
-  noto-fonts-emoji
+  noto-fonts-emoji \
+  7zip
 
 # pipewire installation
 sudo pacman -S --needed --noconfirm pipewire wireplumber pipewire-alsa pipewire-pulse pipewire-jack pipewire-v4l2 lib32-pipewire lib32-pipewire-jack libpipewire
