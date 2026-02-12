@@ -32,6 +32,8 @@ paru -S --needed --noconfirm \
 echo "📦 installing core packages"
 sudo pacman -S --needed --noconfirm \
   hyprland \
+  hyprlock \
+  hypridle \
   waybar \
   kitty \
   rofi \
