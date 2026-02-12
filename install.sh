@@ -50,8 +50,11 @@ sudo pacman -S --needed --noconfirm \
   noto-fonts-emoji \
   7zip
 
-# pipewire installation
-sudo pacman -S --needed --noconfirm pipewire wireplumber pipewire-alsa pipewire-pulse pipewire-jack pipewire-v4l2 lib32-pipewire lib32-pipewire-jack libpipewire
+# pipewire installation and start
+sudo pacman -Syu pipewire pipewire-pulse wireplumber pipewire-alsa pipewire-audio pavucontrol
+systemctl --user daemon-reload
+systemctl --user start pipewire pipewire-pulse wireplumber
+systemctl --user enable pipewire pipewire-pulse wireplumber
 
 # nvidia drivers
 sudo pacman -S nvidia-open-dkms nvidia-utils lib32-nvidia-utils nvidia-settings xorg-xwayland linux-headers clang
