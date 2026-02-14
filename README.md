@@ -93,9 +93,9 @@ cp -r config/* ~/.config/
 
 # 2. Install packages
 sudo pacman -S --needed hyprland hyprlock hypridle hyprpaper waybar \
-  kitty fuzzel fish nvim swaync matugen wl-clipboard \
+  kitty fuzzel fish neovim swaync matugen wl-clipboard \
   ttf-jetbrains-mono-nerd btop noto-fonts noto-fonts-cjk \
-  noto-fonts-emoji neovim dolphin mpv
+  noto-fonts-emoji dolphin mpv
 
 # 3. Install AUR packages (requires paru or yay)
 paru -S wlogout zen-browser-bin amneziavpn-bin
@@ -110,7 +110,7 @@ chsh -s $(which fish)
 
 ## 📁 Configuration Structure
 
-```
+```text
 config/
 ├── fish/           # Fish shell configuration
 ├── fuzzel/         # Application launcher
