@@ -1,12 +1,12 @@
 #!/bin/bash
 
-echo "🛠️ starting installation"
+echo "starting installation"
 
 # copy config
 cp -rup config/* ~/.config/
 
 # update system
-echo "📦 updating system"
+echo "updating system"
 sudo pacman -Syu --noconfirm
 
 # install paru
@@ -31,7 +31,7 @@ paru -S --needed --noconfirm \
   amneziavpn-bin
 
 # core packages
-echo "📦 installing core packages"
+echo "installing core packages"
 sudo pacman -S --needed --noconfirm \
   hyprland \
   hyprlock \
@@ -65,7 +65,7 @@ systemctl --user enable pipewire pipewire-pulse wireplumber
 sudo pacman -S nvidia-open-dkms nvidia-utils lib32-nvidia-utils nvidia-settings xorg-xwayland linux-headers clang
 
 # set fish as default shell
-echo "🐟 setting up fish shell"
+echo "setting up fish shell"
 chsh -s "$(which fish)" "$USER"
 
 # complete
