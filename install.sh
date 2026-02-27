@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e # exit on any error
 
 echo "🛠️ starting installation"
 
